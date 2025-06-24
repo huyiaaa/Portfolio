@@ -1,0 +1,28 @@
+{
+  "appHeader": {
+    "brand": "Portfolio",
+    "home": "Home",
+    "project": "Project",
+    "contact": "Contact",
+    "about": "About"
+  },
+  "heroSection": {
+    "exp": "My Skill",
+    "cv": "Get Resume"
+  },
+  "introSection": {
+    "about": "",
+    "and": "and",
+    "heading1": "As a committed Information Assurance student, I immerse myself in cybersecurity daily—studying threat modeling, vulnerability analysis, and risk management.",
+    "heading2": "I specialize in security domains such as network defense and cryptography,",
+    "heading3": "Key focus areas include",
+    "heading4": "secure system architecture, penetration testing, incident response, and digital forensics,",
+    "heading5": "and I actively engage in real-world security projects to sharpen my practical expertise."
+  },
+  "experience": {
+    "title": "Experiences"
+  },
+  "skill": {
+    "title": "Skills"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "appHeader": {
+    "brand": "Portfolio",
+    "home": "Trang chủ",
+    "project": "Dự án",
+    "contact": "Liên hệ",
+    "about": "Về tác giả"
+  },
+  "heroSection": {
+    "exp": "Kinh nghiệm",
+    "cv": "Tải Resume"
+  },
+  "introSection": {
+    "about": "",
+    "and": "và",
+    "heading1": "Là một sinh viên tận tâm ngành An toàn Thông tin, tôi đắm chìm vào lĩnh vực bảo mật mỗi ngày—nghiên cứu mô hình đe dọa, phân tích lỗ hổng và quản lý rủi ro.",
+    "heading2": "Tôi chuyên về các mảng bảo mật như phòng thủ mạng và mật mã học,",
+    "heading3": "Các lĩnh vực trọng tâm bao gồm",
+    "heading4": "kiến trúc hệ thống an toàn, kiểm thử xâm nhập, ứng phó sự cố và pháp y số,",
+    "heading5": "và tôi tích cực tham gia các dự án bảo mật thực tế để trau dồi chuyên môn."
+  },
+  "experience": {
+    "title": "Kinh nghiệm của tôi"
+  },
+  "skill": {
+    "title": "Kỹ năng"
+  }
+}
