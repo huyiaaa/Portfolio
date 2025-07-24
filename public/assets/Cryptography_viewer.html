@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptography Certificate - Dương Viết Huy</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+      }
+      .header {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .header h1 {
+        margin: 0 0 10px 0;
+        font-size: 28px;
+        font-weight: 600;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .header p {
+        margin: 0;
+        opacity: 0.9;
+        font-size: 16px;
+      }
+      .controls {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 15px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        color: white;
+      }
+      .btn-download {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        border: none;
+      }
+      .btn-download:hover {
+        background: linear-gradient(135deg, #43a5fd 0%, #00e8f4 100%);
+      }
+      .pdf-container {
+        margin: 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        min-height: calc(100vh - 200px);
+      }
+      .pdf-embed {
+        width: 100%;
+        height: calc(100vh - 160px);
+        border: none;
+      }
+      .fallback {
+        padding: 60px 40px;
+        text-align: center;
+        color: #666;
+        background: #f8f9fa;
+      }
+      .fallback h3 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      .fallback p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .certificate-info {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        margin: 0 20px 20px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 22px;
+        }
+        .controls {
+          padding: 10px;
+          gap: 8px;
+        }
+        .btn {
+          padding: 10px 18px;
+          font-size: 12px;
+        }
+        .pdf-container {
+          margin: 10px;
+        }
+        .pdf-embed {
+          height: calc(100vh - 140px);
+        }
+        .certificate-info {
+          margin: 0 10px 10px 10px;
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🏆 Cryptography Certificate</h1>
+      <p>Dương Viết Huy - Information Assurance Student</p>
+    </div>
+
+    <div class="certificate-info">
+      <h3 style="margin: 0 0 5px 0">🔐 Cryptography & Network Security</h3>
+      <p style="margin: 0; opacity: 0.9">
+        Advanced certificate in cryptographic algorithms and secure
+        communications
+      </p>
+    </div>
+
+    <div class="controls">
+      <a
+        href="/assets/Cryptography.pdf"
+        download="Cryptography_Certificate_Huy.pdf"
+        class="btn btn-download"
+      >
+        📥 Download Certificate
+      </a>
+      <button onclick="openFullscreen()" class="btn">
+        🔍 Full Screen View
+      </button>
+      <button onclick="window.close()" class="btn">❌ Close</button>
+    </div>
+
+    <div class="pdf-container">
+      <embed
+        src="/assets/Cryptography.pdf"
+        type="application/pdf"
+        class="pdf-embed"
+      />
+      <div class="fallback">
+        <h3>📄 Certificate Viewer</h3>
+        <p>
+          Your browser doesn't support embedded PDF viewing. Please download the
+          certificate to view it.
+        </p>
+        <a
+          href="/assets/Cryptography.pdf"
+          class="btn btn-download"
+          style="margin-top: 20px"
+        >
+          📥 Download Cryptography Certificate
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function openFullscreen() {
+        window.open("/assets/Cryptography.pdf", "_blank");
+      }
+
+      // Check if PDF is loaded
+      window.addEventListener("load", function () {
+        const embed = document.querySelector(".pdf-embed");
+        const fallback = document.querySelector(".fallback");
+
+        if (embed) {
+          embed.addEventListener("load", function () {
+            if (fallback) fallback.style.display = "none";
+          });
+
+          embed.addEventListener("error", function () {
+            embed.style.display = "none";
+            if (fallback) fallback.style.display = "block";
+          });
+        }
+      });
+
+      // Add some animation on load
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(
+          ".header, .certificate-info, .controls, .pdf-container"
+        );
+        elements.forEach((el, index) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          setTimeout(() => {
+            el.style.transition = "all 0.6s ease";
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+          }, index * 150);
+        });
+      });
+    </script>
+  </body>
+</html>

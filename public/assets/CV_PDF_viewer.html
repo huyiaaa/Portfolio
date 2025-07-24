@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Dương Viết Huy</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #2c3e50;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .header h1 {
+        margin: 0 0 10px 0;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .header p {
+        margin: 0;
+        opacity: 0.9;
+        font-size: 16px;
+      }
+      .controls {
+        background: #34495e;
+        padding: 15px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .btn-download {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .btn-download:hover {
+        background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .btn-fullscreen {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+      .btn-fullscreen:hover {
+        background: linear-gradient(135deg, #ee82e9 0%, #f34560 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .pdf-container {
+        flex: 1;
+        background: white;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .pdf-embed {
+        width: 100%;
+        height: 80vh;
+        border: none;
+      }
+      .fallback {
+        padding: 40px;
+        text-align: center;
+        color: #7f8c8d;
+      }
+      .fallback h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 24px;
+        }
+        .controls {
+          padding: 10px;
+          gap: 10px;
+        }
+        .btn {
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+        .pdf-container {
+          margin: 10px;
+        }
+        .pdf-embed {
+          height: 70vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>📄 Resume</h1>
+      <p>Dương Viết Huy - Information Assurance Student</p>
+    </div>
+
+    <div class="controls">
+      <a
+        href="/assets/SE184528_DƯƠNG VIẾT HUY.pdf"
+        download="CV_DUONG_VIET_HUY.pdf"
+        class="btn btn-download"
+      >
+        📥 Download PDF
+      </a>
+      <button onclick="openFullscreen()" class="btn btn-fullscreen">
+        🔍 Open in New Tab
+      </button>
+    </div>
+
+    <div class="pdf-container">
+      <embed
+        src="/assets/SE184528_DƯƠNG VIẾT HUY.pdf"
+        type="application/pdf"
+        class="pdf-embed"
+      />
+      <div class="fallback">
+        <h3>PDF Viewer Not Supported</h3>
+        <p>Your browser doesn't support embedded PDFs.</p>
+        <a
+          href="/assets/SE184528_DƯƠNG VIẾT HUY.pdf"
+          class="btn btn-download"
+          style="margin-top: 15px"
+        >
+          📥 Download PDF to View
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function openFullscreen() {
+        window.open("/assets/SE184528_DƯƠNG VIẾT HUY.pdf", "_blank");
+      }
+
+      // Check if PDF is loaded
+      window.addEventListener("load", function () {
+        const embed = document.querySelector(".pdf-embed");
+        const fallback = document.querySelector(".fallback");
+
+        embed.addEventListener("load", function () {
+          fallback.style.display = "none";
+        });
+
+        embed.addEventListener("error", function () {
+          embed.style.display = "none";
+          fallback.style.display = "block";
+        });
+      });
+    </script>
+  </body>
+</html>

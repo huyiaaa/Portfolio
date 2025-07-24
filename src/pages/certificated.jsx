@@ -5,73 +5,377 @@ import Crypto1 from "assets/certificate/Crypto.png";
 import Ccna from "assets/certificate/CCNA.png";
 import Python from "assets/certificate/Python.png";
 const Certificate = () => {
+  const handleViewCertificate = (viewerPath) => {
+    window.open(viewerPath, "_blank");
+  };
+
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
-      <h2>Chứng chỉ cá nhân</h2>
+      <h2 style={{ marginBottom: "30px", color: "#2c3e50" }}>🏆 Certificate</h2>
 
       <div
         style={{
-          display: "gird",
-          gridTemplateColumns: "repeat(2,1fr)",
-          gap: "20px",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "30px",
+          marginTop: "30px",
         }}
       >
-        <div>
+        {/* Certificate Images */}
+        <div
+          style={{
+            position: "relative",
+            background: "white",
+            borderRadius: "12px",
+            padding: "20px",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+          }}
+        >
           <img
             src={EthicHacking}
-            alt="Chứng chỉ"
+            alt="CertNexus Certificate"
             style={{
-              maxWidth: "100%",
-              border: "1px solid #ccc",
+              width: "100%",
+              height: "250px",
+              objectFit: "cover",
               borderRadius: "8px",
-              marginTop: "20px",
-              height: "320px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
             }}
+            onMouseOver={(e) => {
+              e.target.style.transform = "scale(1.02)";
+              e.target.parentElement.style.transform = "translateY(-5px)";
+              e.target.parentElement.style.boxShadow =
+                "0 8px 25px rgba(0,0,0,0.15)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = "scale(1)";
+              e.target.parentElement.style.transform = "translateY(0)";
+              e.target.parentElement.style.boxShadow =
+                "0 4px 15px rgba(0,0,0,0.1)";
+            }}
+            onClick={() =>
+              handleViewCertificate("/assets/CertNexus_viewer.html")
+            }
           />
+          <h3 style={{ margin: "15px 0 5px 0", color: "#2c3e50" }}>
+            🛡️ CertNexus
+          </h3>
+          <p style={{ color: "#666", margin: "0 0 15px 0" }}>Ethical Hacking</p>
+          <button
+            onClick={() =>
+              handleViewCertificate("/assets/CertNexus_viewer.html")
+            }
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "#4facfe",
+              color: "white",
+              border: "none",
+              borderRadius: "25px",
+              cursor: "pointer",
+              fontWeight: "500",
+              transition: "all 0.3s ease",
+              boxShadow: "0 4px 15px rgba(79, 172, 254, 0.3)",
+            }}
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = "#43a5fd";
+              e.target.style.transform = "translateY(-2px)";
+              e.target.style.boxShadow = "0 6px 20px rgba(79, 172, 254, 0.4)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = "#4facfe";
+              e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "0 4px 15px rgba(79, 172, 254, 0.3)";
+            }}
+          >
+            📄 View Certificate
+          </button>
+        </div>
+
+        <div
+          style={{
+            position: "relative",
+            background: "white",
+            borderRadius: "12px",
+            padding: "20px",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+          }}
+        >
           <img
             src={Crypto1}
-            alt="Chứng chỉ"
+            alt="Cryptography Certificate"
             style={{
-              maxWidth: "100%",
-              border: "1px solid #ccc",
+              width: "100%",
+              height: "250px",
+              objectFit: "cover",
               borderRadius: "8px",
-              marginTop: "20px",
-              height: "320px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
             }}
+            onMouseOver={(e) => {
+              e.target.style.transform = "scale(1.02)";
+              e.target.parentElement.style.transform = "translateY(-5px)";
+              e.target.parentElement.style.boxShadow =
+                "0 8px 25px rgba(0,0,0,0.15)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = "scale(1)";
+              e.target.parentElement.style.transform = "translateY(0)";
+              e.target.parentElement.style.boxShadow =
+                "0 4px 15px rgba(0,0,0,0.1)";
+            }}
+            onClick={() =>
+              handleViewCertificate("/assets/Cryptography_viewer.html")
+            }
           />
+          <h3 style={{ margin: "15px 0 5px 0", color: "#2c3e50" }}>
+            🔐 Cryptography
+          </h3>
+          <p style={{ color: "#666", margin: "0 0 15px 0" }}>
+            Network Security Certificate
+          </p>
+          <button
+            onClick={() =>
+              handleViewCertificate("/assets/Cryptography_viewer.html")
+            }
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "#667eea",
+              color: "white",
+              border: "none",
+              borderRadius: "25px",
+              cursor: "pointer",
+              fontWeight: "500",
+              transition: "all 0.3s ease",
+              boxShadow: "0 4px 15px rgba(102, 126, 234, 0.3)",
+            }}
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = "#5a67d4";
+              e.target.style.transform = "translateY(-2px)";
+              e.target.style.boxShadow = "0 6px 20px rgba(102, 126, 234, 0.4)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = "#667eea";
+              e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "0 4px 15px rgba(102, 126, 234, 0.3)";
+            }}
+          >
+            📄 View Certificate
+          </button>
+        </div>
+
+        <div
+          style={{
+            position: "relative",
+            background: "white",
+            borderRadius: "12px",
+            padding: "20px",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+          }}
+        >
           <img
             src={Cyberops}
-            alt="Chứng chỉ"
+            alt="CyberOps Certificate"
             style={{
-              maxWidth: "100%",
-              border: "1px solid #ccc",
+              width: "100%",
+              height: "250px",
+              objectFit: "cover",
               borderRadius: "8px",
-              marginTop: "20px",
-              height: "320px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
             }}
+            onMouseOver={(e) => {
+              e.target.style.transform = "scale(1.02)";
+              e.target.parentElement.style.transform = "translateY(-5px)";
+              e.target.parentElement.style.boxShadow =
+                "0 8px 25px rgba(0,0,0,0.15)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = "scale(1)";
+              e.target.parentElement.style.transform = "translateY(0)";
+              e.target.parentElement.style.boxShadow =
+                "0 4px 15px rgba(0,0,0,0.1)";
+            }}
+            onClick={() =>
+              handleViewCertificate("/assets/CyberOps_viewer.html")
+            }
           />
-          <img
-            src={Crypto1}
-            alt="Chứng chỉ"
+          <h3 style={{ margin: "15px 0 5px 0", color: "#2c3e50" }}>
+            🔐 Cisco CyberOps
+          </h3>
+          <p style={{ color: "#666", margin: "0 0 15px 0" }}>
+            Associate Certificate
+          </p>
+          <button
+            onClick={() =>
+              handleViewCertificate("/assets/CyberOps_viewer.html")
+            }
             style={{
-              maxWidth: "100%",
-              border: "1px solid #ccc",
-              borderRadius: "8px",
-              marginTop: "20px",
-              height: "320px",
+              padding: "10px 20px",
+              backgroundColor: "#667eea",
+              color: "white",
+              border: "none",
+              borderRadius: "25px",
+              cursor: "pointer",
+              fontWeight: "500",
+              transition: "all 0.3s ease",
+              boxShadow: "0 4px 15px rgba(102, 126, 234, 0.3)",
             }}
-          />
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = "#5a67d4";
+              e.target.style.transform = "translateY(-2px)";
+              e.target.style.boxShadow = "0 6px 20px rgba(102, 126, 234, 0.4)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = "#667eea";
+              e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "0 4px 15px rgba(102, 126, 234, 0.3)";
+            }}
+          >
+            📄 View Certificate
+          </button>
+        </div>
+
+        <div
+          style={{
+            position: "relative",
+            background: "white",
+            borderRadius: "12px",
+            padding: "20px",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+          }}
+        >
           <img
             src={Ccna}
-            alt="Chứng chỉ"
+            alt="CCNA Certificate"
             style={{
-              maxWidth: "100%",
-              border: "1px solid #ccc",
+              width: "100%",
+              height: "250px",
+              objectFit: "cover",
               borderRadius: "8px",
-              marginTop: "20px",
-              height: "320px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
             }}
+            onMouseOver={(e) => {
+              e.target.style.transform = "scale(1.02)";
+              e.target.parentElement.style.transform = "translateY(-5px)";
+              e.target.parentElement.style.boxShadow =
+                "0 8px 25px rgba(0,0,0,0.15)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = "scale(1)";
+              e.target.parentElement.style.transform = "translateY(0)";
+              e.target.parentElement.style.boxShadow =
+                "0 4px 15px rgba(0,0,0,0.1)";
+            }}
+            onClick={() => handleViewCertificate("/assets/CCNA_viewer.html")}
           />
+          <h3 style={{ margin: "15px 0 5px 0", color: "#2c3e50" }}>
+            🌐 Cisco CCNA
+          </h3>
+          <p style={{ color: "#666", margin: "0 0 15px 0" }}>
+            Routing & Switching
+          </p>
+          <button
+            onClick={() => handleViewCertificate("/assets/CCNA_viewer.html")}
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "#f093fb",
+              color: "white",
+              border: "none",
+              borderRadius: "25px",
+              cursor: "pointer",
+              fontWeight: "500",
+              transition: "all 0.3s ease",
+              boxShadow: "0 4px 15px rgba(240, 147, 251, 0.3)",
+            }}
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = "#ee82e9";
+              e.target.style.transform = "translateY(-2px)";
+              e.target.style.boxShadow = "0 6px 20px rgba(240, 147, 251, 0.4)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = "#f093fb";
+              e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "0 4px 15px rgba(240, 147, 251, 0.3)";
+            }}
+          >
+            📄 View Certificate
+          </button>
+        </div>
+
+        <div
+          style={{
+            position: "relative",
+            background: "white",
+            borderRadius: "12px",
+            padding: "20px",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+          }}
+        >
+          <img
+            src={Python}
+            alt="Python Certificate"
+            style={{
+              width: "100%",
+              height: "250px",
+              objectFit: "cover",
+              borderRadius: "8px",
+              cursor: "pointer",
+              transition: "transform 0.3s ease",
+            }}
+            onMouseOver={(e) => {
+              e.target.style.transform = "scale(1.02)";
+              e.target.parentElement.style.transform = "translateY(-5px)";
+              e.target.parentElement.style.boxShadow =
+                "0 8px 25px rgba(0,0,0,0.15)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = "scale(1)";
+              e.target.parentElement.style.transform = "translateY(0)";
+              e.target.parentElement.style.boxShadow =
+                "0 4px 15px rgba(0,0,0,0.1)";
+            }}
+            onClick={() => handleViewCertificate("/assets/Python_viewer.html")}
+          />
+          <h3 style={{ margin: "15px 0 5px 0", color: "#2c3e50" }}>
+            🐍 Python Programming
+          </h3>
+          <p style={{ color: "#666", margin: "0 0 15px 0" }}>Advanced Python</p>
+          <button
+            onClick={() => handleViewCertificate("/assets/Python_viewer.html")}
+            style={{
+              padding: "10px 20px",
+              backgroundColor: "#ffecd2",
+              background: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+              color: "white",
+              border: "none",
+              borderRadius: "25px",
+              cursor: "pointer",
+              fontWeight: "500",
+              transition: "all 0.3s ease",
+              boxShadow: "0 4px 15px rgba(252, 182, 159, 0.3)",
+            }}
+            onMouseOver={(e) => {
+              e.target.style.background =
+                "linear-gradient(135deg, #fce4c1 0%, #faa688 100%)";
+              e.target.style.transform = "translateY(-2px)";
+              e.target.style.boxShadow = "0 6px 20px rgba(252, 182, 159, 0.4)";
+            }}
+            onMouseOut={(e) => {
+              e.target.style.background =
+                "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)";
+              e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "0 4px 15px rgba(252, 182, 159, 0.3)";
+            }}
+          >
+            📄 View Certificate
+          </button>
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ const HeroRight = () => {
         <code className="text-white-0">
           <div>
             <span className="me-2 text-pink-100">const</span>
-            <span className="me-2">developer</span>
+            <span className="me-2">Cybersecurity</span>
             <span className="me-2 text-pink-100">=</span>
             <span>{"{"}</span>
           </div>

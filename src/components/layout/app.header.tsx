@@ -46,10 +46,10 @@ function AppHeader() {
             <NavLink className="nav-link" to="/">
               {t("appHeader.home")}
             </NavLink>
-            <NavLink className="nav-link" to="/project">
+            {/* <NavLink className="nav-link" to="/project">
               {" "}
               {t("appHeader.project")}
-            </NavLink>
+            </NavLink> */}
             <NavLink className="nav-link" to="/about">
               {t("appHeader.about")}
             </NavLink>

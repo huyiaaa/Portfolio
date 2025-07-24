@@ -5,10 +5,24 @@ import "./hero.scss";
 import ResizeButton from "components/sections/resize.button";
 import { APP_DATA } from "helpers/data";
 import { MdFileDownload } from "react-icons/md";
-import { AiFillFire } from "react-icons/ai";
 
 const HeroLeft = () => {
   const { t } = useTranslation();
+
+  const handleDownloadCV = () => {
+    // Tạo link tải CV PDF
+    const link = document.createElement("a");
+    link.href = "/assets/SE184528_DƯƠNG VIẾT HUY.pdf";
+    link.download = "CV_DUONG_VIET_HUY.pdf"; // Tên file khi tải về
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleViewCV = () => {
+    // Mở CV PDF viewer trong tab mới
+    window.open("/assets/CV_PDF_viewer.html", "_blank");
+  };
 
   return (
     <div className="hero-left">
@@ -46,17 +60,9 @@ const HeroLeft = () => {
       </div>
       <div className="d-md-flex d-none gap-4">
         <ResizeButton
-          btnText={t("heroSection.exp")}
-          btnIcons={<AiFillFire style={{ color: "orange" }} />}
-          btnStyle={{
-            background: "unset",
-            border: "1px solid var(--border-hero-right)",
-            color: "var(--text-white-1)",
-          }}
-        />
-        <ResizeButton
           btnText={t("heroSection.cv")}
           btnIcons={<MdFileDownload />}
+          onClick={handleViewCV}
         />
       </div>
     </div>
